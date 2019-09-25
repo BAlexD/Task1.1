@@ -1,16 +1,17 @@
-int button = 0;
 void setup() {
   pinMode(2, OUTPUT);//red
   pinMode(3, OUTPUT);//yellow
   pinMode(4, OUTPUT);//green
   pinMode(5, INPUT);//button 
-  
+
 
 }
 
 void loop() {
-  button = digitalRead(5);
+  int button = digitalRead(5);
   if (button == HIGH){
+   digitalWrite(4,LOW);
+    delay (1000);
    digitalWrite(2,HIGH);
    delay (1000);
    digitalWrite(2,LOW);
@@ -25,6 +26,6 @@ void loop() {
    delay (1000);
   }
   else{
-    digitalWrite(2,HIGH);
+    digitalWrite(4,HIGH);
   }
 }
